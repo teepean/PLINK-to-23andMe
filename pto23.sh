@@ -16,6 +16,6 @@ for i in $(seq 0 $loppu)
 do 
 	place="${family[$i]}"
 	echo "${family[$i]}" "${indiv[$i]}" > filter.txt
-	plink --bfile $1 --keep filter.txt --recode 23 --out "${indiv[$i]}"
+	plink --bfile $1 --keep filter.txt --snps-only --recode 23 --out "${indiv[$i]}"
 done
 rm filter.txt
